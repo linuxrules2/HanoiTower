@@ -15,11 +15,11 @@ public class HanoiTower {
         System.out.println("Current Time: " + date);
     }
 
-    private void move(String from, String to, String via, int layer, int buttomSize) {
+    private void move(String from, String to, String via, int layer) {
 
         if(layer == 1) {
             // one layer
-            System.out.println("Move one disk size " + buttomSize + " from " + from + " to " + to + ".");
+            System.out.println("Move one disk from " + from + " to " + to + ".");
 /*
             try {
                 Thread.sleep(100);
@@ -30,9 +30,9 @@ public class HanoiTower {
 */
         }
         else {
-            move(from, via, to, layer -1, layer-1);
-            move(from, to, "N/A", 1, layer);
-            move(via, to, from, layer -1, layer -1);
+            move(from, via, to, layer -1);
+            move(from, to, "N/A", 1);
+            move(via, to, from, layer -1);
         }
     }
 
@@ -41,7 +41,7 @@ public class HanoiTower {
         Date start = new Date();
 
         printTime(start);
-        move("Pole1", "Pole2", "Pole3", layer, layer);
+        move("Pole1", "Pole2", "Pole3", layer);
 
         Date end = new Date();
         printTime(start);
