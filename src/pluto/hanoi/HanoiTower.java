@@ -20,14 +20,6 @@ public class HanoiTower {
         if(layer == 1) {
             // one layer
             System.out.println("Move one disk size " + buttomSize + " from " + from + " to " + to + ".");
-/*
-            try {
-                Thread.sleep(100);
-            }
-            catch(Exception e) {
-
-            }
-*/
         }
         else {
             move(from, via, to, layer -1, layer-1);
