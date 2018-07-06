@@ -17,6 +17,11 @@ public class HanoiTower {
 
     private void move(String from, String to, String via, int layer) {
 
+        if (layer <= 0) {
+            // nothing to move
+            return;
+        }
+
         if(layer == 1) {
             // one layer
             System.out.println("Move one disk from " + from + " to " + to + ".");
